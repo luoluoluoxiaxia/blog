@@ -21,6 +21,8 @@ class CreateBlogContentTable extends Migration
             $table->char('blog_type_name',16)->comment('博文分类名字');
             $table->timestamps();
         });
+
+
     }
 
     /**

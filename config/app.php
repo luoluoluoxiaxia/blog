@@ -137,7 +137,7 @@ return [
     */
 
     'providers' => [
-
+        zgldh\QiniuStorage\QiniuFilesystemServiceProvider::class,
         /*
          * Laravel Framework Service Providers...
          */

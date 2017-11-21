@@ -14,3 +14,6 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Auth::routes();
+Route::get('/list/{uid?}/{page?}','ListController@index');
+Route::get('/home', 'HomeController@index')->name('home');
