@@ -12,6 +12,11 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+    <!-- Scripts -->
+    <script src="{{ asset('js/app.js') }}"></script>
+
+    @include('UEditor::head');
 </head>
 <body>
     <div id="app">
@@ -56,6 +61,12 @@
                                         <a href="/user">
                                             个人中心
                                         </a>
+                                        <a href="/push">
+                                            发布博客
+                                        </a>
+                                        <a href="/user">
+                                            系统消息<p class="badge">14</p>
+                                        </a>
 
                                         {{--<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">--}}
                                             {{--{{ csrf_field() }}--}}
@@ -82,8 +93,5 @@
 
         @yield('content')
     </div>
-
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>
