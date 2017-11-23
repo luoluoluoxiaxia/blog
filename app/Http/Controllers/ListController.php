@@ -12,18 +12,16 @@ class ListController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function index($uid = 1 ,$page = 1)
     {
         //获取用户uid
-        $uId = $request->get('uid',1);
-
+        $uId = $uid;
         //获取要看哪一页
-        $page = $request->get('page',1);
+        $page = $page;
 
         $BlogList = BlogContent::getBlogList($uId,$page);
-//        print_R($BlogList);die;
-        return view('blog.list', ['blogList' => $BlogList]);
 
+        return view('blog.list', ['blogList' => $BlogList]);
     }
 
     /**
