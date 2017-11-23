@@ -17,3 +17,5 @@ Route::get('/', function () {
 Auth::routes();
 Route::get('/list/{uid?}/{page?}','ListController@index');
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/blog/{blogId?}', 'BlogController@index');
+Route::get('/push', 'BlogController@push');
