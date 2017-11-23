@@ -137,6 +137,7 @@ return [
     */
 
     'providers' => [
+        Stevenyangecho\UEditor\UEditorServiceProvider::class,
         zgldh\QiniuStorage\QiniuFilesystemServiceProvider::class,
         /*
          * Laravel Framework Service Providers...
