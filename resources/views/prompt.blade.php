@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Dashboard</div>
+                <div class="panel-heading">Prompt</div>
 
                 <div class="panel-body">
                     @if (session('status'))
@@ -13,11 +13,13 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                    {{}}
-                    You are logged in!
+                    {{$mess}}
                 </div>
             </div>
         </div>
     </div>
 </div>
+<script>
+
+</script>
 @endsection
