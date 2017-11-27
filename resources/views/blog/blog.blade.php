@@ -21,9 +21,9 @@
             </div>
             <div class="col-md-4 ">
                 <div class="col-md-8 list-group text-center" >
-                        <a href="/list/{{$blogInfo['user_id']}}" class="list-group-item">
-                        <img src="{{$blogInfo['user_head']}}">
-                        <h4 class=" ">用户名：{{$blogInfo['user_name']}}</h4>
+                        <a href="/list/{{$userInfo['user_id']}}" class="list-group-item">
+                        <img src="{{$userInfo['user_head']}}">
+                        <h4 class=" ">用户名：{{$userInfo['user_name']}}</h4>
                         </a>
                 </div>
 

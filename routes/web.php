@@ -15,9 +15,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 Auth::routes();
-Route::get('/list/{uid?}/{page?}','ListController@index');
-Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/blog/{blogId?}', 'BlogController@index');
-Route::get('/push', 'BlogController@push');
-Route::post('/add_type', 'BlogTypeController@create');
-Route::post('/add_blog', 'BlogController@create');
+Route::resource('blog','BlogController');
+Route::resource('blog_type','BlogTypeController');
+Route::resource('list','ListController');
+//Route::get('/list/{uid?}/{page?}','ListController@index');
+//Route::get('/home', 'HomeController@index')->name('home');
+//Route::get('/blog/{blogId?}', 'BlogController@index');
+//Route::get('/push', 'BlogController@push');
+//Route::post('/add_type', 'BlogTypeController@create');
+//Route::post('/add_blog', 'BlogController@create');

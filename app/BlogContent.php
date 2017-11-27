@@ -33,10 +33,7 @@ class BlogContent extends Model
 
     //获取博客详情
     public static function getBlog($blogId){
-        $blogInfo = self::select('id','user_id','blog_content','blog_title','blog_type_id','blog_type_name','created_at')
-            ->where('id',$blogId)
-            ->get()->toarray();
-        return current(self::_formatBlog($blogInfo));
+
     }
 
     //组合数据

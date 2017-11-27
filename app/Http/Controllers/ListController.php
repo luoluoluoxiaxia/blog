@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\BlogContent;
+use App\Users;
 use Illuminate\Http\Request;
 
 class ListController extends Controller
@@ -12,16 +13,9 @@ class ListController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($uid = 1 ,$page = 1)
+    public function index()
     {
-        //获取用户uid
-        $uId = $uid;
-        //获取要看哪一页
-        $page = $page;
 
-        $BlogList = BlogContent::getBlogList($uId,$page);
-
-        return view('blog.list', ['blogList' => $BlogList]);
     }
 
     /**
@@ -41,9 +35,16 @@ class ListController extends Controller
      * @param  \App\blog_content  $blog_content
      * @return \Illuminate\Http\Response
      */
-    public function show(blog_content $blog_content)
+    public function show($list)
     {
-        //
+        //list 为uid
+        $uid = $list?:1;
+        //获取用户username
+        $userInfo = Users::where('id',$uid)->first();
+
+        $blogList = BlogContent::where('user_id',$list)->paginate(10); //BlogContent::getBlogList($uId,$page);
+
+        return view('blog.list',compact('blogList','blogContent','userInfo'));
     }
 
     /**

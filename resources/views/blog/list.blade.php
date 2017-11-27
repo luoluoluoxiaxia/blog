@@ -10,9 +10,9 @@
                     <div class="list">
                         @foreach ($blogList as $key =>$val)
                             <div class="list-group" id="blog-list-{{$val['id']}}">
-                                <a href="/blog/{{$val['id']}}" class="list-group-item">
+                                <a href="{{ route('blog.show',$val['id']) }}" class="list-group-item">
                                     <h4 class="list-group-item-heading"> {{$val['blog_title']}}</h4>
-                                    <p class="list-group-item-text text-right">用户名：{{$val['user_name']}}</p>
+                                    <p class="list-group-item-text text-right">用户名：{{$userInfo['user_name']}}</p>
                                     <p class="list-group-item-text text-right">创建时间：{{$val['created_at']}}</p>
                                     @if (Route::has('login'))
                                             @auth
@@ -24,7 +24,7 @@
                             </div>
                         @endforeach
                     </div>
-
+                    {{ $blogList->links() }}
                 </div>
             </div>
         </div>
