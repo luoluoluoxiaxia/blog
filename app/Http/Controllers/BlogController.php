@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\BlogContent;
 use Illuminate\Http\Request;
 use App\Users;
+use App\BlogType;
+use Illuminate\Support\Facades\Auth;
 
 class BlogController extends Controller
 {
@@ -26,6 +28,17 @@ class BlogController extends Controller
     public function create()
     {
         //
+        if (!Auth::check()) {
+            //登录
+            return Redirect::route('login');
+        }
+
+        //得到用户id
+        $userId = Auth::id();
+        //获取已有分类
+        $typeList = BlogType::getUserType($userId);
+
+        return view('blog.push',['typeList'=>$typeList]);
     }
 
     /**
@@ -54,7 +67,7 @@ class BlogController extends Controller
         $userInfo = Users::where('id',$blogInfo['user_id'])->first();
 
         return view('blog.blog',compact('blogInfo','userInfo'));
-//        return current(self::_formatBlog($blogInfo));
+
     }
 
     /**

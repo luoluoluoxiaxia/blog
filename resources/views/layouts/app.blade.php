@@ -61,7 +61,7 @@
                                         <a href="/user">
                                             个人中心
                                         </a>
-                                        <a href="/push">
+                                        <a href="{{ route('blog.create') }}">
                                             发布博客
                                         </a>
                                         <a href="/user">

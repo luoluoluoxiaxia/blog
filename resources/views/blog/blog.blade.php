@@ -1,6 +1,5 @@
 @extends('layouts.app')
 @section('content')
-
     <div class="container">
         <div class="row">
             <div class="col-md-8 ">
@@ -21,7 +20,7 @@
             </div>
             <div class="col-md-4 ">
                 <div class="col-md-8 list-group text-center" >
-                        <a href="/list/{{$userInfo['user_id']}}" class="list-group-item">
+                        <a href="/list/{{$userInfo['id']}}" class="list-group-item">
                         <img src="{{$userInfo['user_head']}}">
                         <h4 class=" ">用户名：{{$userInfo['user_name']}}</h4>
                         </a>
